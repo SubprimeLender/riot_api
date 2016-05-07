@@ -31,8 +31,8 @@ echo "$summoner_id<br><br>";
 
 	foreach ($parsed_current_match->participants as $k) {
 		$match_players[] = array(
-		  "Name"=>$k->summonerName, 
-		  "ID"=>$k->summonerId, 
-		  "Champion"=>$k->championId,
+		  "Name"        => $k->summonerName, 
+		  "ID"          => $k->summonerId, 
+		  "Champion"    => $k->championId,
 		  );
 	};
