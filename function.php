@@ -28,6 +28,6 @@ echo "$summoner_id<br><br>";
 	//session storage array
 	$match_players = array();
 	//store summoner name, summoner ID, and champ into session storage array
-	foreach ($parsed_current_match->participants as $k=>$v) {
+	foreach ($parsed_current_match->participants as $k) {
 		$match_players['$k'] = array("Name"=>$k['summonerName'], "ID"=>$k['summonerId'], "Champion"=>$k['championId']);
 	};
