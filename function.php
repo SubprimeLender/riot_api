@@ -3,7 +3,9 @@ include 'api_key.php';
 include 'region.php';
 
 //get summoner name from form
-$summoner_name = $_POST['summonername'];
+$summoner_name_encoded = rawurlencode($_POST['summonername']);
+$summoner_name = str_replace(" ", "", $_POST['summonername']);
+$summoner_name = strtolower($summoner_name);
 
 //converts summoner name into summoner ID
 	//get api packet for summoner ID
@@ -25,9 +27,12 @@ echo "$summoner_id<br><br>";
 	$response_current_match = file_get_contents($current_match_url, true);
 	//parse it
 	$parsed_current_match = json_decode($response_current_match);
-	//session storage array
-	$match_players = array();
 	//store summoner name, summoner ID, and champ into session storage array
+
 	foreach ($parsed_current_match->participants as $k) {
-		$match_players['$k'] = array("Name"=>$k['summonerName'], "ID"=>$k['summonerId'], "Champion"=>$k['championId']);
+		$match_players[] = array(
+		  "Name"        => $k->summonerName, 
+		  "ID"          => $k->summonerId, 
+		  "Champion"    => $k->championId,
+		  );
 	};
