@@ -5,3 +5,4 @@
 + [region.php](region.php) simply has the region variable...not important
 + [function.php](function.php) takes submitted summoner name, converts it to summoner ID, gets current game info, then stores summoner name, ID, and champ for all players in the game into $match_players storage array
 + [mastery_result.php](master_result.php) is placeholder for the resulting output page
++ [sample.txt](sample.txt) is a sample current match json return in case you want to look at how the api packet is set up
