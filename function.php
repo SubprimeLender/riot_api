@@ -21,7 +21,7 @@ $summoner_name = strtolower($summoner_name);
 		  "Name"        => $data->summonerName, 
 		  "ID"          => $data->summonerId, 
 		  "Champion"    => $data->championId,
-		 "Team"		=> $data->teamId,
-		  "CMastery"	=> get_mastery_function($data->summonerId),
+		  "Team"	=> $data->teamId,
+		  "CMastery"	=> get_mastery($data->summonerId),
 		  );
 	};
