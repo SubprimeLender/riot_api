@@ -25,15 +25,18 @@ $summoner_name = strtolower($summoner_name);
 	};
 
 //gets champion mastery data for all players
-foreach ($match_players as $player) {
-	$player_id = key($match_players);
-	$parsed_champion_mastery = get_api("https://na.api.pvp.net/championmastery/location/NA1/player/" . $player_id . "/champions?api_key=" . $api_key_tony);
-	//create array of player's champion masteries 
-	$mastery_array = array();
-	//store champion masteries {championId => championPoints} into $mastery_array
-	foreach ($parsed_champion_mastery as $champ) {
-		$mastery_array[$champ->championId] = $champ->championPoints;
+	//array of $match_players' keys
+	$players = array_keys($match_players);
+	//iterates through each of the 10 players
+	foreach ($players as $player) {
+		//get champion mastery for particular $player
+		$parsed_champion_mastery = get_api("https://na.api.pvp.net/championmastery/location/NA1/player/" . $player . "/champions?api_key=" . $api_key_tony);
+		//create array of particular player's champion masteries 
+		$mastery_array = array();
+		//store champion masteries into $mastery_array {championId => championPoints} 
+		foreach ($parsed_champion_mastery as $champ) {
+			$mastery_array[$champ->championId] = $champ->championPoints;
+		};
+		//add $mastery_array to storage $match_players as additional array [0]
+		array_push($match_players[$player], $mastery_array);
 	};
-	//add to storage $match_players
-	array_push($match_players[$player_id], $mastery_array);
-};
