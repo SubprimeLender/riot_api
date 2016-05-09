@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-<head>
 <title>Champselect.info</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="custom_styles.css">
 </head>
 
 <body>
@@ -22,47 +22,28 @@
 		<h1>Current Game</h1>
 	</div>
 </div>
-<div class="container">
+<div class="container-fluid">
 	<div class="row text-center">
-		<div id="top-team" class="col-lg-12 col-md-12 hidden-sm hidden-xs">
-			<table class="table">
-			<tbody>
-				<tr>
-					<?php
-					foreach($match_teams[0] as $k) {
-						echo "<td><img src='http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" . $champion_reference[$k["Champion"]] . "_0.jpg' height='270' width='150'></td>";	
-					};
-					?>
-				</tr>
-				<tr>
-				<?php
-					foreach($match_teams[0] as $k) {
-						echo "<td>" . $k['Name'] . "</td>";	
-					};
-					?>
-				</tr>
-			</tbody>
-			</table>
+		<div id="top-team" class="container center">
+			<?php
+			foreach($match_teams[0] as $k) {
+				echo "<div class='champ-container col-lg-2 col-md-2' style='background-image:url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" . $champion_reference[$k["Champion"]] . "_0.jpg)';></div>";	
+				};
+			foreach($match_teams[0] as $k) {
+				echo "<div class='name-container col-lg-2 col-md-2'>" . $k['Name'] . "</div>";	
+				};
+			?>
 		</div>
-		<div id="bottom-team" class="col-lg-12 col-md-12 hidden-sm hidden-xs">
-			<table class="table">
-			<tbody>
-				<tr>
-					<?php
-					foreach($match_teams[1] as $k) {
-						echo "<td>" . $k['Name'] . "</td>";	
-					};
-					?>
-				</tr>
-				<tr>
-					<?php
-					foreach($match_teams[1] as $k) {
-						echo "<td><img src='http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" . $champion_reference[$k["Champion"]] . "_0.jpg' height='270' width='150'></td>";	
-					};
-					?>
-				</tr>
-			</tbody>
-			</table>
+		<hr>
+		<div id="bottom-team" class="container center">
+			<?php
+			foreach($match_teams[1] as $k) {
+				echo "<div class='name-container col-lg-2 col-md-2'>" . $k['Name'] . "</div>";	
+				};
+			foreach($match_teams[1] as $k) {
+				echo "<div class='champ-container col-lg-2 col-md-2' style='background-image:url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" . $champion_reference[$k["Champion"]] . "_0.jpg)';></div>";	
+				};
+			?>
 		</div>
 	</div>
 </div>
