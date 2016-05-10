@@ -20,7 +20,7 @@
       </div>
       <div class="badge">
        <img src="/imgs/minglee.jpg" />
-       <p>Just like twitch admins, we are unsure if you are here to help us, or ban us. You have played enough to get rank 5 mastery. But have yet to reach PogChap level. You can either be a God, or freelo. You control your own destiny and we pray you are the latter.</p>
+       <p>Just like twitch admins, we are unsure if you are here to help us, or ban us. You have played enough to get rank 5 mastery. But have yet to reach PogChamp level. You can either be a God, or freelo. You control your own destiny and we pray you are the latter.</p>
       </div>
       <div class="badge">
        <img src="/imgs/lirikN.jpg" />
