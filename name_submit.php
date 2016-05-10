@@ -6,22 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="custom_styles.css">
 </head>
-<style>
-	.top-pad {
-		padding-top: 500px;
-	}
-</style>
+
 <body>
 <!-- Top of page heading -->
-<div id="logo" class="center top-pad col-12">
-	
+<div id="logo" class="center top-pad col-3">
+	<img class="center-block" src="imgs/KappaLogo.png">
 </div>
 <div id="submit" class="center text-center col-12">
-	<form action="mastery_result.php" method="POST">
-		<input type="text" name="summonername" id="summonername">
-		<div>
-	    	<input type="submit" value="Look Me Up!" class="btn btn-success btn-lrg">
-	    </div>
+	<form action="mastery_result.php" method="POST" class="clearfix">
+		<input type="text" name="summonername" id="summonername" class="main-search-input" placeholder="Search for a summoner in a current game">
+		<input type="submit" value="Search!" class="btn btn-success btn-lrg">
 	</form>
 </div>
 </body>
