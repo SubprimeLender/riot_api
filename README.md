@@ -1,4 +1,6 @@
 # riot_api
+TIME SPENT: 3 days 
+LEARNING CS: 5 weeks
 
 + [name_submit.php](name_submit.php) is where the user will submit his summoner name
 + [api_key.php](api_key.php) simply has keys as variables (insert yours)
