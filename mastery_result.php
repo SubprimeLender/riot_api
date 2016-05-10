@@ -17,10 +17,8 @@
 	$match_teams = array_chunk($match_players, 5);
 ?>
 <!-- Top of page heading -->
-<div class ="jumbotron jumbotron-fluid">
-	<div class ="container text-center">
-		<h1>Current Game</h1>
-	</div>
+<div id="logo" class ="container text-center">
+	<a href="/kappa/"><img src="imgs/KappaLogo.png"></a>
 </div>
 <div class="container-fluid">
 	<div class="row text-center">
@@ -30,7 +28,7 @@
 				echo "<div class='champ-container col-lg-2 col-md-2' style='background-image:url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" . $champion_reference[$k["Champion"]] . "_0.jpg)';></div>";	
 				};
 			foreach($match_teams[0] as $k) {
-				echo "<div class='name-container col-lg-2 col-md-2'>" . $k['Name'] . "</div>";	
+				echo "<div class='name-container well col-lg-2 col-md-2'><b>" . $k['Name'] . "</b></div>";	
 				};
 			?>
 		</div>
@@ -38,7 +36,7 @@
 		<div id="bottom-team" class="container center">
 			<?php
 			foreach($match_teams[1] as $k) {
-				echo "<div class='name-container col-lg-2 col-md-2'>" . $k['Name'] . "</div>";	
+				echo "<div class='name-container well col-lg-2 col-md-2'><b>" . $k['Name'] . "</b></div>";	
 				};
 			foreach($match_teams[1] as $k) {
 				echo "<div class='champ-container col-lg-2 col-md-2' style='background-image:url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/" . $champion_reference[$k["Champion"]] . "_0.jpg)';></div>";	
