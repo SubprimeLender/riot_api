@@ -20,8 +20,10 @@
 <div id="logo" class ="container text-center">
 	<a href="/kappa/"><img src="imgs/KappaLogo.png"></a>
 </div>
+<!-- Content -->
 <div class="container-fluid">
 	<div class="row text-center">
+		<!-- Top team -->
 		<div id="top-team" class="container center">
 			<?php
 			foreach($match_teams[0] as $k) {
@@ -33,6 +35,7 @@
 			?>
 		</div>
 		<hr>
+		<!-- Bottom team -->
 		<div id="bottom-team" class="container center">
 			<?php
 			foreach($match_teams[1] as $k) {
